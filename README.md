@@ -1,5 +1,5 @@
 ### Description
-A small tool to dump Caffe's \*.caffemodel to JSON for inspection (\*.prototxt files is not needed). Will not print all the weights to make the output concise.
+A small tool to dump Caffe's \*.caffemodel to JSON for inspection (\*.prototxt files is not needed). Will not print all the weights to make the output concise. This tool (with all weights output) can be used to generate json input for [DeepLearningKit](http://DeepLearningKit.org) for conv.nets generated in Caffe.
 
 ### Example
 > ./caffemodel2json.py CAFFE_ROOT/src/caffe/proto/caffe.proto model_name.caffemodel > dump.json
