@@ -43,9 +43,12 @@ def pb2json(pb):
 			js_value = []
 			for v in value:
 				js_value.append(ftype(v))
-			if len(js_value) > 64 or (field.name == 'data' and len(js_value) > 8):
-				head_n = 5
-				js_value = js_value[:head_n] + ['(%d elements more)' % (len(js_value) - head_n)]
+# Add the 3 commented lines if you want just a "preview" (short) mode of the json generated (for human inspection)
+# note that the preview json is useless for actual deep learning processing
+#
+#			if len(js_value) > 64 or (field.name == 'data' and len(js_value) > 8):
+#				head_n = 5
+#				js_value = js_value[:head_n] + ['(%d elements more)' % (len(js_value) - head_n)]
 		else:
 			js_value = ftype(value)
 		js[field.name] = js_value
